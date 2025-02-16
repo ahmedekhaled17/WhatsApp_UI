@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:thrid_project/features/home/views/screen/widgets/BottomNav.dart';
-import 'package:thrid_project/features/home/views/screen/widgets/app_bar_call.dart';
-import 'package:thrid_project/features/home/views/screen/widgets/app_bar_home.dart';
-import 'package:thrid_project/features/home/views/screen/widgets/custom_list_rile_call.dart';
-import 'package:thrid_project/features/home/views/screen/widgets/custom_widget_body.dart';
-
-import '../../model/call_model.dart';
+import 'package:thrid_project/features/home/views/widgets/custom_list_rile_call.dart';
+import '../../../home/model/call_model.dart';
 
 class CallScreen extends StatelessWidget {
   const CallScreen({super.key});
@@ -25,7 +20,7 @@ class CallScreen extends StatelessWidget {
         title: "خالد",
         subTitle: "امس 11:27",
         image: "assets/images (2).jpeg",
-        iconData:Icons.call),
+        iconData: Icons.call),
     CallModel(
         title: "عمر",
         subTitle: "امس 11:15",
@@ -70,25 +65,11 @@ class CallScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        bottomNavigationBar: const BottomNav(),
-        floatingActionButton: FloatingActionButton(onPressed: (){},
-          backgroundColor: Colors.tealAccent,
-          child: const Icon(Icons.add_call),),
-        backgroundColor: Colors.black,
-        appBar: AppBarCall,
-        body:
-        ListView.builder(
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                  return CustomListTileCall(callModel: items[index]);
-
-                  },
-
-                  ),
-      ),
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return CustomListTileCall(callModel: items[index]);
+      },
     );
   }
 }

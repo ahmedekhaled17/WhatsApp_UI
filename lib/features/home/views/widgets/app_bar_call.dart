@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thrid_project/core/text_style.dart';
 import 'package:thrid_project/core/widgets/pop_menu_item.dart';
 
-AppBar AppBarCall = AppBar(
+AppBar appbarCall = AppBar(
     backgroundColor: Colors.black,
     leadingWidth: double.infinity,
     leading: const Padding(

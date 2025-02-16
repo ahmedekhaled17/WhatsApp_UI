@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:thrid_project/core/text_style.dart';
-import '../../../model/call_model.dart';
+import '../../model/call_model.dart';
 
 class CustomListTileCall extends StatelessWidget {
   const CustomListTileCall({
@@ -29,7 +29,6 @@ class CustomListTileCall extends StatelessWidget {
         trailing: Icon(
           color: Colors.white,
           callModel.iconData,
-
         ),
       ),
     );

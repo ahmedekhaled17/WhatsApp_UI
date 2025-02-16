@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:thrid_project/features/home/views/screen/call_screen.dart';
-import 'package:thrid_project/features/home/views/screen/home_screen.dart';
-import 'package:thrid_project/features/home/views/screen/status_screen.dart';
+import 'package:thrid_project/features/calls/view/screens/call_screen.dart';
+import 'package:thrid_project/features/home/views/screen/main_scaffold.dart';
+import 'package:thrid_project/features/status/view/screens/status_screen.dart';
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
+  final ValueChanged<int>? onTap;
+  const BottomNav({super.key, this.onTap});
 
   @override
   State<BottomNav> createState() => _BottomNavState();
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int selectedIndex = 2;
+  int selectedIndex = 0;
   List screens = [
-    HomeScreen(),
-    StatusScreen(),
-    CallScreen(),
+    const MainScaffold(),
+    const StatusScreen(),
+    const CallScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -27,6 +29,8 @@ class _BottomNavState extends State<BottomNav> {
         onTap: (value) {
           setState(() {
             selectedIndex = value;
+            widget.onTap!(value);
+            // screens[value];
           });
         },
         items: const [

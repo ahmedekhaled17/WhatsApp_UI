@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:thrid_project/core/text_style.dart';
-import 'package:thrid_project/core/widgets/pop_menu_item.dart';
 
-AppBar AppBarUpdate = AppBar(
+AppBar appBarUpdate = AppBar(
     backgroundColor: Colors.black,
     leadingWidth: double.infinity,
     leading: const Padding(
       padding: EdgeInsets.only(right: 10),
       child: Text("التحديثات  ", style: AppStyle.w),
     ),
-    actions: [
+    actions: const [
       Row(
         children: [
-          const Icon(
+          Icon(
             Icons.search,
             color: Colors.white,
           ),
